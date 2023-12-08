@@ -4,7 +4,7 @@ param environment string
 targetScope = 'resourceGroup'
 
 module app './appservice.bicep' = {
-  name: 'appService'
+  name: 'appservice'
   params: {
     appName: 'workshop-dnazghbicep-jimmacle'
     environment: environment
