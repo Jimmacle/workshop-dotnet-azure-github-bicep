@@ -44,7 +44,7 @@ resource appSettings 'Microsoft.Web/sites/config@2022-09-01' = {
       kind: 'string'
       parent: appService
       properties: {
-          ASPNETCORE_ENVIRONMENT: 'dev'
+          ASPNETCORE_ENVIRONMENT: environment
       }
     }
     
@@ -78,6 +78,6 @@ resource appServiceSlotSetting 'Microsoft.Web/sites/slots/config@2022-09-01' = {
    kind: 'string'
    parent: appServiceSlot
    properties: {
-     ASPNETCORE_ENVIRONMENT: 'dev'
+     ASPNETCORE_ENVIRONMENT: environment
    }
  }
