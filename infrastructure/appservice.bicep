@@ -1,9 +1,10 @@
 ﻿param location string
 @allowed(['dev', 'prod'])
 param environment string
+param appName string
 
 resource appServicePlan 'Microsoft.Web/serverfarms@2022-09-01' = {
-      name: 'asp-dnazghbicep-jimmacle-dev'
+      name: appName
       location: location
       sku: {
         name: 'S1'
@@ -15,7 +16,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2022-09-01' = {
     }
 
 resource appService 'Microsoft.Web/sites@2022-09-01' = {
-    name: 'app-dnazghbicep-jimmacle-dev'
+    name: appName
     location: location
     identity: {
      type: 'SystemAssigned'
